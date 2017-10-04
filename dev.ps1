@@ -12,4 +12,7 @@ Packages: 	Notepad++
 
 #>
 
-choco install notepadplusplus eclipse atom pycharm-community
+choco install notepadplusplus eclipse atom pycharm-community -y
+scoop install concfg
+scoop install pshazz
+concfg import solarized small
