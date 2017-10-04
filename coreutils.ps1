@@ -1,1 +1,1 @@
-choco install git 7zip vim sudo openssh curl wget
+choco install git 7zip vim sudo openssh curl wget -y
