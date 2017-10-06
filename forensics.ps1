@@ -1,20 +1,11 @@
-<#
-This script auto installs all the programs I need when using a computer for dev purposes.
+$v_autopsy="autopsy-4.4.1"
 
-You need chocolatey to be able to run this script.
-Install -> https://chocolatey.org/install
-
-Packages: 	Sleuthkit
-			Radare2
-			Shellbagsexplorer
-			TimelineExplorer
-			
-
-#>
-
-$v_autopsy=autopsy-4.4.1
-
-choco install sleuthkit radare shellbagsexplorer timelineexplorer 
+choco install sleuthkit radare shellbagsexplorer timelineexplorer -y
 wget https://github.com/sleuthkit/autopsy/releases/download/$v_autopsy/$v_autopsy-64bit.msi
 Start-Process msiexec.exe -ArgumentList "/I $v_autopsy-64bit.msi /quiet" -Wait
 rm $v_autopsy-64bit.msi
+echo "$v_autopsy has been installed"
+mkdir FOR_installers
+cd FOR_installers
+wget http://www.nirsoft.net/utils/lastactivityview.zip
+wget http://mh-nexus.de/downloads/HxDSetupEN.zip
